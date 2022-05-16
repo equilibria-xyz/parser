@@ -790,3 +790,9 @@ using Lib for uint global;
 using Lib for * global;
 using Lib for s global;
 using L.Lib for uint global;
+
+contract GlobalVarName {
+    function test() pure {
+        uint256 global = 1;
+    }
+}
