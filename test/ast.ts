@@ -49,6 +49,7 @@ describe('AST', () => {
         stateMutability: null,
       },
       libraryName: 'Lib',
+      isGlobal: false,
     })
 
     ast = parseNode('using Lib for *;')
@@ -56,6 +57,7 @@ describe('AST', () => {
       type: 'UsingForDeclaration',
       typeName: null,
       libraryName: 'Lib',
+      isGlobal: false,
     })
 
     ast = parseNode('using Lib for S;')
@@ -66,6 +68,7 @@ describe('AST', () => {
         namePath: 'S',
       },
       libraryName: 'Lib',
+      isGlobal: false,
     })
 
     ast = parseNode('using L.Lib for S;')
@@ -76,6 +79,49 @@ describe('AST', () => {
         namePath: 'S',
       },
       libraryName: "L.Lib",
+      isGlobal: false,
+    })
+
+    ast = parseNode('using Lib for uint global;')
+    assert.deepEqual(ast, {
+      type: 'UsingForDeclaration',
+      typeName: {
+        type: 'ElementaryTypeName',
+        name: 'uint',
+        stateMutability: null,
+      },
+      libraryName: 'Lib',
+      isGlobal: true,
+    })
+
+    ast = parseNode('using Lib for * global;')
+    assert.deepEqual(ast, {
+      type: 'UsingForDeclaration',
+      typeName: null,
+      libraryName: 'Lib',
+      isGlobal: true,
+    })
+
+    ast = parseNode('using Lib for S global;')
+    assert.deepEqual(ast, {
+      type: 'UsingForDeclaration',
+      typeName: {
+        type: 'UserDefinedTypeName',
+        namePath: 'S',
+      },
+      libraryName: 'Lib',
+      isGlobal: true,
+    })
+
+    ast = parseNode('using L.Lib for S global;')
+    assert.deepEqual(ast, {
+      type: 'UsingForDeclaration',
+      typeName: {
+        type: 'UserDefinedTypeName',
+        namePath: 'S',
+      },
+      libraryName: "L.Lib",
+      isGlobal: true,
     })
   })
 

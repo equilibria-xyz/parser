@@ -155,6 +155,7 @@ export interface UsingForDeclaration extends BaseASTNode {
   type: 'UsingForDeclaration'
   typeName: TypeName | null
   libraryName: string
+  isGlobal: boolean
 }
 export interface StructDefinition extends BaseASTNode {
   type: 'StructDefinition'

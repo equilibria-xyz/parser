@@ -785,3 +785,8 @@ library FixedMath {
 contract C {
   using L.Lib for uint;
 }
+
+using Lib for uint global;
+using Lib for * global;
+using Lib for s global;
+using L.Lib for uint global;

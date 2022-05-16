@@ -523,11 +523,16 @@ export class ASTBuilder
     if (ctxTypeName !== undefined) {
       typeName = this.visitTypeName(ctxTypeName)
     }
+    let isGlobal = false
+    if (ctx.GlobalKeyword() !== undefined) {
+      isGlobal = true
+    }
 
     const node: AST.UsingForDeclaration = {
       type: 'UsingForDeclaration',
       typeName,
       libraryName: this._toText(ctx.userDefinedTypeName()),
+      isGlobal
     }
 
     return this._addMeta(node, ctx)
