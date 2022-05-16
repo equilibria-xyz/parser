@@ -1,4 +1,4 @@
 [submodule "antlr"]
 	path = antlr
-	url = https://github.com/solidity-parser/antlr
+	url = https://github.com/equilibria-xyz/antlr
 	branch = master
