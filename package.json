@@ -1,6 +1,6 @@
 {
-  "name": "@solidity-parser/parser",
-  "version": "0.14.1",
+  "name": "@equilibria/parser",
+  "version": "0.14.2",
   "description": "A Solidity parser built from a robust ANTLR 4 grammar",
   "main": "dist/index.cjs.js",
   "browser": {
@@ -32,12 +32,13 @@
     "Franco Victorio",
     "Nick Addison",
     "Gonçalo Sá <goncalo.sa@consensys.net>",
-    "Federico Bond <federicobond@gmail.com>"
+    "Federico Bond <federicobond@gmail.com>",
+    "Kevin Britz <kevin@equilibria.xyz>"
   ],
-  "homepage": "https://github.com/solidity-parser/parser",
+  "homepage": "https://github.com/equilibria-xyz/parser",
   "repository": {
     "type": "git",
-    "url": "https://github.com/solidity-parser/parser"
+    "url": "https://github.com/equilibria-xyz/parser"
   },
   "license": "MIT",
   "dependencies": {
